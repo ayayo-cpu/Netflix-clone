@@ -11,7 +11,7 @@
   width: 12%;
   display: flex;
   justify-content: space-between;
-  margin-left: 10px;
+  margin: 10px;
   color: #fff;
 }
 .footerData {
