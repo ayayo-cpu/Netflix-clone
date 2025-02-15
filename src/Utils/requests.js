@@ -1,5 +1,6 @@
-// const API_KEY = ProcessingInstruction.env.REACT_APP_API_KEY;
-const API_KEY = 'd6340b0abd4acd7c9728b48e63ed5dd7';
+// const API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY = import.meta.env.VITE_API_KEY;
+// const API_KEY = 'd6340b0abd4acd7c9728b48e63ed5dd7';
 const requests = {
   fetchTfending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
   fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,
@@ -32,3 +33,5 @@ export default requests;
 //   console.error("API Key is not defined!");
 // }
 // export default requests;
+
+

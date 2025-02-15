@@ -4,17 +4,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(20, 20, 20);
   background-color: transparent;
+  background-color: rgb(20, 20, 20);
   height: 8vh;
   color: #fff;
   transition: all 0.5s;
   transition-timing-function: ease-in;
   z-index: 1;
-  /* background-color: red; */
 }
 img {
-  max-height: 22px;
+  /* max-height: 22px; */
   border: 1px solid black;
 }
 .headerContainer {
