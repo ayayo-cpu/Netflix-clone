@@ -1,13 +1,29 @@
-import React from 'react'
-import "./Header.css"
+import React, { useEffect, useState } from "react";
+import "./Header.css";
 import NetflixLogo from "../../assets/images/logo.jpg";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="headerOuterContainer">
+    <div className={`headerOuterContainer ${isScrolled ? "scrolled" : ""}`}>
       <div className="headerContainer">
         <div className="headerLeft">
           <ul>
@@ -26,13 +42,13 @@ function Header() {
               <SearchIcon />
             </li>
             <li>
-                <NotificationsNoneIcon/>
+              <NotificationsNoneIcon />
             </li>
             <li>
-                <AccountBoxIcon/>
+              <AccountBoxIcon />
             </li>
             <li>
-                <ArrowDropDownIcon/>
+              <ArrowDropDownIcon />
             </li>
           </ul>
         </div>
@@ -41,4 +57,4 @@ function Header() {
   );
 }
 
-export default Header
+export default Header;
